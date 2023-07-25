@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitPub Food</title>
+    <style type="text/css">
+        body {
+          color: blanchedalmond;
+          background-color: steelblue;
+        }
+      </style>
+</head>
+<body>
+    <h1>Welcome to GitPub</h1>
+    <h2>Our Food</h2>
+    <ul>
+      <% food.forEach((foodItem, index) => { %>
+        <li>
+          <h3><a href="/food/<%= index %>"><%= foodItem.name.charAt(0).toUpperCase() + foodItem.name.slice(1) %></a></h3>
+          <img src="<%= foodItem.image %>" alt="<%= foodItem.name %>">
+          <p>Price: <%= foodItem.price %></p>
+        </li>
+      <% }) %>
+    </ul>
+</body>
+</html>
